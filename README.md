@@ -1,4 +1,5 @@
 ### Social media app
 ### My ERD
 ***
-![Screenshot (365)](https://user-images.githubusercontent.com/69292786/172272876-1e281a9b-5400-4dd4-8efe-386f3ee42626.png)
+
+![Screenshot (367)](https://user-images.githubusercontent.com/69292786/172371842-2bd4ddf1-2b1a-40f8-9a80-8cbe326dc7fe.png)
