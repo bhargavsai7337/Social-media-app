@@ -4,8 +4,9 @@
   "description": "This app useful for people to connect each other",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "nodemon index.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [
     "app",
@@ -15,12 +16,16 @@
   "author": "Bhargav sai Challagulla",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "mongodb": "^4.7.0",
-    "mongoose": "^6.3.8"
+    "mongoose": "^6.4.1",
+    "npm": "^8.13.1",
+    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16"
+    "concurrently": "^7.2.2",
+    "nodemon": "^2.0.18"
   }
 }
