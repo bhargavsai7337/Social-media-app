@@ -5,6 +5,7 @@ import {Route,Link} from 'react-router-dom';
 import profile from './components/profile';
 import login from './components/login';
 import register from './components/register';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (

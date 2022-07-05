@@ -2,9 +2,23 @@ import React from "react";
 import login from './login';
 import register from './register';
 import profile from "./profile";
-import {Route,Link} from 'react-router-dom';
+import {Outlet,Link} from 'react-router-dom';
 
-function navb(){
+const navb=()=>{
+  const { user } = useContext(UserContext);
+
+  const authenticated = (
+    <Fragment>
+      <h2>Hi, { user.username } </h2>
+    </Fragment>
+  )
+
+  const guest = (
+    <Fragment>
+      <h2>Welcome! </h2>
+    </Fragment>
+  )
+
   return(
     <div className="row">
       <div className="col">
@@ -16,6 +30,7 @@ function navb(){
       <div>
       <Link to="/register">register</Link>
       </div>
+      <Outlet />
     </div>
   )
 
