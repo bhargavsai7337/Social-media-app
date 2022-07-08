@@ -3,7 +3,7 @@ import {Outlet,Link} from 'react-router-dom';
 import context from "../context/context";
 import { useContext, Fragment } from "react";
 
-const navb=()=>{
+const Navb=()=>{
   const { user } = useContext(context);
 
   const authenticated = (
@@ -42,4 +42,4 @@ const navb=()=>{
 
 }
 
-export default navb;
+export default Navb;

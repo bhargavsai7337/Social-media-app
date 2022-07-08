@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useContext} from "react";
 import UserContext from "../context/context.js";
 
-const register = () => {
+const Register = () => {
   const navigate = useNavigate();
 
   
@@ -44,10 +44,10 @@ const register = () => {
         <input type="password" placeholder="Password" id="password" name="password" onChange={onChange} value={password}></input><br></br>
         <label for="pwd" htmlFor="password2">Enter Password</label>
         <input type="password" placeholder="Password" id="password2" name="password2" onChange={onChange} value={password2}></input><br></br>
-        <input type="submit" value="login" id="btn"></input><br></br>
+        <input type="submit" value="submit" id="btn"></input><br></br>
       </form>
     </div>
   );
 }
 
-export default register;
+export default Register;

@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import home from "./components/home.js";
-import login from "./components/login";
-import navb from './components/navb.js';
-import register from './components/register.js'
-import profile from './components/profile.js'
+import Home from "./components/home.js";
+import Login from "./components/login";
+import Navb from './components/navb.js';
+import Register from './components/register.js'
+import Profile from './components/profile.js'
 import { UserProvider } from './context/context.js';
 
 
@@ -16,11 +16,11 @@ function App() {
       <UserProvider>
         <BrowserRouter>
           <Routes>
-            <Route element={<navb />}>
-              <Route index element={<home />}/>
-              <Route path="profile" element={<profile />}/>
-              <Route path="login" element={<login />}/>
-              <Route path="register" element={<register />}/>
+            <Route element={<Navb />}>
+              <Route index element={<Home />}/>
+              <Route path="profile" element={<Profile />}/>
+              <Route path="login" element={<Login />}/>
+              <Route path="register" element={<Register />}/>
             </Route>
           </Routes>
         </BrowserRouter>

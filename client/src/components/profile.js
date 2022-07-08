@@ -2,11 +2,11 @@ import React from "react";
 import { fetchData,deleteData} from "../main.js";
 import {useState} from "react";
 
-function profile() {
+function Profile() {
  
   
-  const [loading, setLoading] = useState(false);  
-  const [text, setText] = useState("");
+  const [ setLoading] = useState(false);  
+  const [text] = useState("");
   const [posts, setPosts] = useState([]);
 
   const addPost = () => {
@@ -29,7 +29,7 @@ function profile() {
     deleteData(`/posts/${id}`,"DELETE")
       .then((data) => {
        let  filtredData=posts.filter((post)=>{
-          return post._id !=id
+          return post._id !==id
         })
         setPosts(filtredData)
 
@@ -75,4 +75,4 @@ function profile() {
 }
 
 
-export default profile;
+export default Profile;
