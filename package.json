@@ -1,6 +1,7 @@
 {
   "name": "web_app",
   "version": "1.0.0",
+  "homepage": ".",
   "description": "This app useful for people to connect each other",
   "main": "index.js",
   "scripts": {

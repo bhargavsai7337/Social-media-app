@@ -1,6 +1,13 @@
 import React from "react";
+import { fetchData } from "../main.js";
+import { useNavigate } from "react-router-dom";
+import { useContext} from "react";
+import UserContext from "../context/context.js";
+
 const register = () => {
   const navigate = useNavigate();
+
+  
 
   const {user, updateUser} = useContext(UserContext);
 
@@ -20,7 +27,7 @@ const register = () => {
     .then((data) => {
       if(!data.message) {
         updateUser("authenticated", true)
-        navigate("/books")
+        navigate("/home")
       }
     })  
     .catch((error) => {
@@ -31,10 +38,12 @@ const register = () => {
     <div className="register">
         <h1>Register page</h1>
       <form>
-        <label for="uname">Enter username</label>
-        <input type="email" placeholder="Username" name="uname" id="uname"></input><br></br>
-        <label for="pwd">Enter Password</label>
-        <input type="password" placeholder="Password" id="pwd" name="pwd"></input><br></br>
+        <label for="uname" htmlFor="username">Enter username</label>
+        <input type="text" placeholder="Username" name="uname" id="uname" onChange={onChange} value={username}></input><br></br>
+        <label for="pwd" htmlFor="password">Enter Password</label>
+        <input type="password" placeholder="Password" id="password" name="password" onChange={onChange} value={password}></input><br></br>
+        <label for="pwd" htmlFor="password2">Enter Password</label>
+        <input type="password" placeholder="Password" id="password2" name="password2" onChange={onChange} value={password2}></input><br></br>
         <input type="submit" value="login" id="btn"></input><br></br>
       </form>
     </div>

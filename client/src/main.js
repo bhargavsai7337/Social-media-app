@@ -1,5 +1,5 @@
 export async function fetchData(route='', data={}, methodType) {
-    //sending over our data to specified route in server
+
     const response = await fetch(`${route}`, {
       method: methodType,
       headers: {
@@ -8,8 +8,17 @@ export async function fetchData(route='', data={}, methodType) {
       body: JSON.stringify(data)
     });
   
-    //dealing with our response from server
     if(response.ok) {
+      return await response.json();
+    } else {
+      throw await response.json();
+    }
+  }
+  export async function deleteData(route = "") {
+    const response = await fetch(`api${route}`, {
+      method:"DELETE"
+    });
+    if (response.ok) {
       return await response.json();
     } else {
       throw await response.json();

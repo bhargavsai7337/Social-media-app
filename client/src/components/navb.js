@@ -1,11 +1,10 @@
 import React from "react";
-import login from './login';
-import register from './register';
-import profile from "./profile";
 import {Outlet,Link} from 'react-router-dom';
+import context from "../context/context";
+import { useContext, Fragment } from "react";
 
 const navb=()=>{
-  const { user } = useContext(UserContext);
+  const { user } = useContext(context);
 
   const authenticated = (
     <Fragment>
@@ -20,16 +19,23 @@ const navb=()=>{
   )
 
   return(
-    <div className="row">
-      <div className="col">
-      <Link to="/profile">profile</Link>
-      </div>
-      <div>
-     <Link to="/login">login</Link>
-      </div>
-      <div>
-      <Link to="/register">register</Link>
-      </div>
+    <div>
+      <nav className="navbar navbar-expand-lg bg-light">
+        <div className="container-fluid">
+          { user.authenticated ? authenticated : guest }
+          <Link className="navbar-brand" to="/">social-mediaapp</Link>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div className="navbar-nav">
+            <Link className="nav-link active" aria-current="page" to="/login">login</Link>
+            <Link className="nav-link" to="/register">register</Link>
+            <Link className="nav-link" to="/profile">Profile</Link>
+            </div>
+          </div>
+        </div>
+      </nav>
       <Outlet />
     </div>
   )
