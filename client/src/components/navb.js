@@ -14,7 +14,7 @@ const Navb=()=>{
 
   const guest = (
     <Fragment>
-      <h2>Welcome! </h2>
+      <h2> </h2>
     </Fragment>
   )
 
